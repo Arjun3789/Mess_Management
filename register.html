@@ -10,32 +10,29 @@
 		<div class="container">
 			<div class="card">
                 <div class="card-back">
-                     
+                    <form action="register.php" method="POST">
                     <h1>REGISTER</h1>
-                        
-                        <form action="register.php" method="POST">
                         <p>First Name
                         <input type="text"  name="FName" class="input-box" placeholder="First Name" required></p>
                         <p>Last Name
                         <input type="text" name="LName" class="input-box" placeholder="Last Name" ></p>
                         <p>Password
-                        <input type="password" name="Pass" id="pass1" class="input-box" placeholder="Passwoed" ></p>
+                        <input type="password" name="Pass" id="pass1" class="input-box" placeholder="Passwoed" required></p>
                         <p>Confirm Password
-                        <input type="password" name="ConPass" id="pass2" class="input-box" placeholder="Confirm Password"></p>
+                        <input type="password" name="ConPass" id="pass2" class="input-box" placeholder="Confirm Password" required></p>
                         <p>Email
-                        <input type="email" name="Email" class="input-box" placeholder="Email" ></p>
+                        <input type="email" name="Email" class="input-box" placeholder="Email" required></p>
                         <p>Contact_Number
-                        <input type="number" name="Phone" class="input-box" placeholder="Contact_Number" ></p>
+                        <input type="number" name="Phone" class="input-box" placeholder="Contact_Number" required></p>
                         <a href="login.html">
                         <button type="submit" value="submit" name="submit" class="reg-btn">login</button></a>		
                         </form>
-                    <a href="login.html">
-                    <button type="submit" class="btn" >I Have an Account</button></a>
+                    
                 </div>	
             </div>
         </div>
     
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             var password = document.getElementById("pass1"), confirm_password = document.getElementById("pass2");
    
            function validatePassword()
@@ -52,6 +49,6 @@
    
            password.onchange = validatePassword;
            confirm_password.onkeyup = validatePassword;
-        </script>
+        </script>-->
     </body>
 </html>
