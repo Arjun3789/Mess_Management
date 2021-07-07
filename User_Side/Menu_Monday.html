@@ -1,0 +1,265 @@
+<html>
+<head>
+	<title>User_HomePage</title>
+	<link rel="stylesheet" type="text/css" href="User_HomePage.css">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.container {
+  position: absolute;
+  max-width: 170px;
+  
+}
+
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.5); 
+  width: 118%;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 118%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@keyframes shake{
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.container:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<div class="menu-bar">
+<ul>
+	<li><a href="./User_Homepage.html" style="font-size:15px;"><i class="fa fa-home"></i> Home</a></li>
+	<li><a href="" style="font-size:15px;"><i class="fa fa-newspaper-o"></i> Menu</a>
+		<div class="sub-menu-1" style="position: absolute; z-index: 1;border-radius: 15%">
+			<ul>
+				<li><a href="Menu_Monday.html">Monday</a></li>
+				<li><a href="Menu_Tuesday.html">Tuesday</a></li>
+				<li><a href="Menu_Wednesday.html">Wednesday</a></li>
+				<li><a href="Menu_Thursday.html">Thursday</a></li>
+				<li><a href="Menu_Friday.html">Frinday</a></li>
+				<li><a href="Menu_Saturday.html">Saturday</a></li>
+			</ul>
+		</div>
+	</li>
+	<li><a href="./User_Services.html" style="font-size:15px;"><i class="fa fa-shopping-bag"></i> Services</a></li>
+	<li><a href=""><i class="fa fa-rupee" style="font-size:15px;"></i> Package</a></li>
+	<li><a href="./User_AboutUs.html" style="font-size:15px;"><i class="fa fa-user-circle"></i> About Us</a></li>
+	<li><a href="./User_ContactUs.html" style="font-size:15px;"><i class="fa fa-phone"></i> Contact Us</a></li>
+</ul>
+</div>
+<br><br>
+<marquee style="color:white;" direction = "right", scrollamount="15"><i><b style="font-size:150%;text-shadow: 1px 1px blue">WELCOME TO P & Z EATERY AND EATING HOUSE</b></i></marquee>
+<br><br>
+<h2 style="margin: 20px;"> BREAKFAST</h2>
+<div class="container" style="margin-left:60px;margin-top: 30px">
+  <img src="./Breakfast/emethi.jpg" style="width:200px; height:250px;border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color:white">METHI PARATHA</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:360px;margin-top: 30px">
+  <img src="./Breakfast/euttapa.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">UTTAPPA</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:680px;margin-top: 30px">
+  <img src="./Breakfast/ebanana.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">BANANA</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1000px;margin-top: 30px">
+  <img src="./Breakfast/etea.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">TEA</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1300px;margin-top: 30px">
+  <img src="./Breakfast/ecoffee.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">COFFEE</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">CHOICE</div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2 style="margin: 20px;"> LUNCH</h2>
+<div class="container" style="margin-left:60px;margin-top: 40px">
+  <img src="./Breakfast/efsalad.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color:white">SPROUT SALAD</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:360px;margin-top: 40px">
+  <img src="./Breakfast/ealoo.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">JEERA-ALOO SABJI & CHAPATI</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:680px;margin-top: 40px">
+  <img src="./Breakfast/epulao.jpg" style="width:200px; height:250px; border: 2px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">PULAO</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1000px;margin-top: 40px">
+  <img src="./Breakfast/ejelabi.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">JALEBI</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1300px;margin-top: 40px">
+  <img src="./Breakfast/elassi.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">LASSI</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2 style="margin: 20px;"> DINNER</h2>
+<div class="container" style="margin-left:60px;margin-top: 50px">
+  <img src="./Breakfast/ecorn.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color:white">SWEET-CORN SALAD </h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:360px;margin-top: 40px">
+  <img src="./Breakfast/ethali.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">THALI-PANEER SABJI & CHAPATI</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:680px;margin-top: 40px">
+  <img src="./Breakfast/evegb.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">VEG BIRYANI</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1000px;margin-top: 40px">
+  <img src="./Breakfast/edal.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">DAL-FRY</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<div class="container" style="margin-left:1300px;margin-top: 40px">
+  <img src="./Breakfast/eice.jpg" style="width:200px; height:250px; border: 3px solid black;">
+  <div class="content" style="text-align:center;">
+    <h4 style="text-align:center;color: white">ICE-CREAM</h4>
+  </div>
+  <div class="overlay">
+    <div class="text">NO-CHOICE</div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="background-color:rgba(0,0,0,0.7);color: white"><dl style="margin: 20px; padding: 10px"><br>
+	<dt style="font-size: 20px;"><b> Respective Timings at our Mess : </b></dt>
+	<br>
+	<dd style="font-size: 20px;"> <b>Breakfast :</b><i> 08.00 am to 10.00 am</i></dd>
+	<dd style="font-size: 20px;"> <b>Lunch :</b><i> 01.00 pm to 3.00 pm</i></dd>
+	<dd style="font-size: 20px;"> <b>Dinner :</b><i> 08.00 pm to 10.00 pm</i></dd><br>
+  <dd style="font-size: 20px;"> <b>Note : On every Sunday our mess remains closed.</b></i></dd><br>
+</dl></div>
+<br>
+<div style="background: black;color: white;font-size: 20px"> Connect us at : 
+	<a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style="font-size: 20px;color:white"></i></a>
+	<a href="https://accounts.google.com/signin/v2/challenge/pwd?sacu=1&passive=1209600&acui=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin&cid=1&navigationDirection=forward&TL=AM3QAYbCzswCWucdgLHg8sMq3c572qRAnyvxzxqZFcjen2OGGIhtn6V27THfaru4"><i class="fa fa-google" style="font-size: 20px;color:white"></i></a>
+	<a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fa fa-instagram" style="font-size: 20px;color:white"></i></a>
+	<a href="https://twitter.com/login"><i class="fa fa-twitter-square" style="font-size:20px;color:white"></i></a>
+</div>
+<div style="background: black;color: white;padding: 20px"><h4 style="text-align: center;"><i class="fa fa-copyright"></i> Copyright 2021-2022 by PZEAE.</h4><h4 style="text-align: center;"> All Rights Reserved.</h4></div>
+</body>
+</html>

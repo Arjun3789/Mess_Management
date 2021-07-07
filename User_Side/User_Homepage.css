@@ -1,0 +1,96 @@
+*
+{
+	padding: 0;
+	margin: 0;
+
+}
+
+body
+{
+	background: rgba(100,100,100,0.4);
+	background-size: cover;
+	background-position: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+}
+
+.menu-bar
+{
+	background: rgb(0,100,0);
+	text-align:center;
+}
+
+.menu-bar ul
+{
+	display: inline-flex;
+	list-style: none; 
+	color: white;
+}
+
+.menu-bar ul li
+{
+	width: 200px;
+	margin: 15px;
+	padding: 10px;
+}
+
+.menu-bar ul li a
+{
+	text-decoration: none;
+	color: white; 
+}
+.menu-bar ul li a:hover
+{
+	text-decoration: none;
+	color: yellow; 
+}
+
+.menu-bar ul li:hover 
+{
+	border-radius: 5px;
+	background: green;
+	text-decoration: underline;
+	text-shadow: 1px 1px black;
+}
+
+.side
+{
+	font-size: 15px; 
+	margin: 20px;
+	padding : 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.sub-menu-1
+{
+	display: none;
+
+}
+
+.menu-bar ul li:hover .sub-menu-1
+{
+	display: block;
+	position: absolute;
+	background :rgba(0,100,0,0.7);
+	margin-top: 10px;
+	margin-left: -15px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul{
+	display: block;
+	margin:5px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li
+{
+	width: 150px;
+	padding: 5px;
+	border-bottom: 1px dotted #fff;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child
+{
+	border-bottom: none;
+}
