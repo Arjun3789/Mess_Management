@@ -17,10 +17,10 @@
   if(isset($_POST['submit']))// accessing through submit btn
   {
       //assigning values
-      $email=$_POST['Email'];
+      $Email=$_POST['Email'];
       $Pass=$_POST['Pass'];
       // query for fetching email and password
-      $sql = "select * from register where email='$email' and pass='$Pass' ";
+      $sql = "select * from register where Email='$Email' and pass='$Pass' ";
       $result = mysqli_query($conn,$sql);
 
 
@@ -31,7 +31,7 @@
           <script>
               //pop up message code for login
               alert("LogIn sucessful");
-              window.location.replace('main.html');
+              window.location.replace('./User_Side/User_Homepage.html');
           </script>
           <?php
           #code...
@@ -42,7 +42,7 @@
           <script>
               //pop up message code
               alert("Email or Password are not correct");
-              window.location.replace('login.html');
+              window.location.replace('User_login.html');
           </script>
           <?php
           #code...

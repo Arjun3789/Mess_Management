@@ -19,11 +19,11 @@
         $Lname=$_POST['LName'];
         $Pass=$_POST['Pass'];
         $Confirm=$_POST['ConPass'];
-        $email=$_POST['Email'];
-        $phone=$_POST['Phone'];
+        $Email=$_POST['Email'];
+        $Phone=$_POST['Phone'];
 
         // email verification
-        $emailquery = "select * from register where email='$email'";
+        $emailquery = "select * from register where Email='$Email'";
         $query = mysqli_query($conn,$emailquery);
         $emailcount =  mysqli_num_rows($query);
 
@@ -42,7 +42,7 @@
             if($Pass === $Confirm)// password condition
             {
                 //insert query... adding details to database
-                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$email','$phone')";
+                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$Email','$Phone')";
                 $query = mysqli_query($conn,$q);
                 if(mysqli_query($conn, $query))
                 {
