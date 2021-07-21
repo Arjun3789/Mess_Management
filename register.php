@@ -42,7 +42,7 @@
             if($Pass === $Confirm)// password condition
             {
                 //insert query... adding details to database
-                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$Email','$Phone')";
+                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$Email','$Phone','','')";
                 $query = mysqli_query($conn,$q);
                 if(mysqli_query($conn, $query))
                 {
