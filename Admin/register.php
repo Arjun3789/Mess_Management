@@ -21,11 +21,13 @@
         $Confirm=$_POST['ConPass'];
         $Email=$_POST['Email'];
         $Phone=$_POST['Phone'];
+        $token=bin2hex(random_bytes(15));
 
         // email verification
-        $emailquery = "select * from register where Email='$Email'";
+        $emailquery = "SELECT * FROM register WHERE Email='$Email'";
         $query = mysqli_query($conn,$emailquery);
         $emailcount =  mysqli_num_rows($query);
+        
 
 
         if ($emailcount>0) { //condition of email verification 
@@ -42,19 +44,20 @@
             if($Pass === $Confirm)// password condition
             {
                 //insert query... adding details to database
-                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$Email','$Phone')";
+                $q = "INSERT INTO `register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Confirm','$Email','$Phone','$token')";
                 $query = mysqli_query($conn,$q);
                 if(mysqli_query($conn, $query))
                 {
-        
-                }
+                   
+                } 
                 ?>
                 <script>
                     alert("Registered  Successfully");
                     window.location.replace('login.html');
                 </script>
                 <?php
-                #code....
+                #code...
+                
            }
             else
             { // wrong password code

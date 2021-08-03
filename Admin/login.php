@@ -19,7 +19,7 @@
         $email=$_POST['Email'];
         $Pass=$_POST['Pass'];
         // query for fetching email and password
-        $sql = "select * from register where email='$email' and pass='$Pass' ";
+        $sql = "SELECT * FROM register WHERE email='$email' and pass='$Pass' ";
         $result = mysqli_query($conn,$sql);
 
 
@@ -29,7 +29,7 @@
             ?>
             <script>
                 //pop up message code for login
-                alert("LogIn sucessful");
+                alert("LogIn sucessfull");
                 window.location.replace('main.html');
             </script>
             <?php
@@ -40,7 +40,7 @@
             ?>
             <script>
                 //pop up message code
-                alert("Email or Password are not correct");
+                alert("Email or Password is not correct");
                 window.location.replace('login.html');
             </script>
             <?php
