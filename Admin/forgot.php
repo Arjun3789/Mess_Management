@@ -69,7 +69,7 @@ if(isset($_POST['submit']))  // accessing through submit btn
 
 
     //Content
-    $url="http://localhost/Mess_Management/Admin/reset.php?token=$token";
+    $url="http://localhost/Mess_Management/Admin/reset.html?token=$token";
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = "Password reset";
     $mail->Body    = "<h1>You requested to reset password..</h1>

@@ -58,6 +58,8 @@
 	outline: none;
 	text-align: center;
 	color: #fff;
+	
+	
 }
 ::placeholder{
 	color: #fff;
@@ -104,36 +106,6 @@ button{
 	font-size: 13px;
 	margin-top: 8px;
 }
-.card .btn2{
-	margin-top: 30px;
-}
-.reg-btn,.login-btn{
-	position: relative;
 
-}
-.login-btn::after{
-	content: '\27a4';
-	color: #333;
-	line-height: 32px;
-	font-size: 17px;
-	height: 32px;
-	width: 32px;
-	border-radius: 50%;
-	background: #fff;
-	position: absolute;
-	right: -1px;
-	top: -1px;
-}
-.reg-btn::after{
-	content: '\27a4';
-	color: #333;
-	line-height: 32px;
-	font-size: 17px;
-	height: 32px;
-	width: 32px;
-	border-radius: 50%;
-	background: #fff;
-	position: absolute;
-	right: -1px;
-	top: -1px;
-}
+
+

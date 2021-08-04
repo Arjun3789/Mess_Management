@@ -13,7 +13,7 @@ else
   # code...
 }
 
-if(isset($_GET['token']))
+/*if(isset($_GET['token']))
 {
   $token=$_GET['token'];
   $getemailquery="SELECT Email from register where token='$token'  ";
@@ -65,34 +65,62 @@ if(isset($_GET['token']))
     }
   }
 }       
+*/
+
+if(isset($_GET['token']))
+{
+  $token=$_GET['token'];
+  $getemailquery="SELECT Email from register where token='$token'  ";
+  $emailresult=mysqli_query($conn,$getemailquery);
+  if ($emailresult->num_rows == 0)
+  {
+    echo "no email found";
+  }
+if(isset($_POST['submit']))
+{
+  //$token=$_GET['token'];
+  //$email=$_GET['email'];
+  $newpass=$_POST['Pass'];
+  $newconpass=$_POST['ConPass'];
+
+  //$select="SELECT * FROM register WHERE Token='$token' ";
+  //$result=mysqli_query($conn,$select);
+  //$count=mysqli_num_rows($result);
+  $data=mysqli_fetch_array($emailresult);
+  $password=$data['Pass'];
+
+  //if($count>0)
+  //{
+    if($newpass == $newconpass)
+  {
+      $update="UPDATE register SET Pass='$newpass' WHERE  Token='$token'";
+      $resultsucc=mysqli_query($conn,$update);
+      if($resultsucc)
+      {
+        echo "password reset done";
+      }
+  }
+  else
+  {
+      // wrong password code
+      ?>
+      <script>
+      alert("password does not matched ");
+      // window.location.replace('reset.html');
+      </script>
+      <?php
+      #code...
+  }
+
+  }
+  else 
+  {
+    echo "error";
+  }
+ 
+  
+}
+//}
+
 
 ?>
-<html>
-	<head>
-		<title>Reset_password</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">      
-		<link rel="stylesheet" type="text/css" href="reset.css">
-	</head>
-	<body>
-        <form method="POST">
-			    <div class="card">
-                    <div class="front" >  
-                        <h1>Reset Password</h1>
-                       
-                
-                        <p>Password
-                        <input type="password" name="Pass" id="pass1" class="input-box" placeholder="Passwoed" required></p>
-                        <p>Confirm Password
-                        <input type="password/text" name="ConPass" id="pass2" class="input-box" placeholder="Confirm Password" required></p>
-                        
-                       
-                        <a href="#">
-                        <button type="submit" value="submit" name="submit" class="reg-btn">update password </button></a>		
-                    </div>   
-               
-                </div>
-           
-        </form>
-    </body>
-</html>
