@@ -61,10 +61,30 @@
 	
 	
 }
-::placeholder{
+input::placeholder{
 	color: #fff;
 	font-size: 12px;
 }
+/*.show-hide{
+	position:absolute;
+	color: #a6a6a6;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.show-hide i{
+	font-size: 19px;
+	color: black;
+	cursor: pointer;
+	display: none;
+
+}
+.show-hide i.hide::before{
+	content: '\f070';
+}
+input:valid ~ .show-hide i{
+	display: block;
+}*/
 button{
 	width: 100%;
 	background: transparent;
@@ -79,11 +99,11 @@ button{
 	color: #fff;
 	cursor: pointer;
 }
-.submit-btn{
+.reg-btn{
 	position: relative;
 
 }
-.submit-btn::after{
+.reg-btn::after{
 	content: '\27a4';
 	color: #333;
 	line-height: 32px;
@@ -106,6 +126,22 @@ button{
 	font-size: 13px;
 	margin-top: 8px;
 }
+.login-btn{
+	position: relative;
 
+}
+.login-btn::after{
+	content: '\27a4';
+	color: #333;
+	line-height: 32px;
+	font-size: 17px;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	background: #fff;
+	position: absolute;
+	right: -1px;
+	top: -1px;
+}
 
 

@@ -9,7 +9,8 @@
 			padding:40px;
       align-items: center;
       text-align: center;
-     
+
+      
 		}
 		input 
     {
@@ -29,6 +30,19 @@
 			color:white;
 			cursor:pointer;
 		}
+    .data-btn 
+    {
+			background-color:#8c52ff;
+     
+			padding:8px;
+			color:white;
+			cursor:pointer;
+		}
+    .btn-disable{
+      cursor: not-allowed;
+      color: red;
+      background-color: #fff;
+    }
 	</style>
 		
 	<title>QR Code Generator</title>
@@ -36,12 +50,15 @@
 <body>
     
 	<h3>QR Code Generator</h3>
-    <div><input id="qr-text" type="text" placeholder="Enter  name" /></div>
+    <div><input id="qr-text" type="email" placeholder="Enter  Email" required></div>
     <div><input id="qr-text2" type="date" placeholder="Enter date"/></div>
     <br/>
+    <button class="data-btn" id="data-btn" onclick="">Get Data</button>
     <div>
-      <button class="qr-btn" onclick="generateQRCode()">Create QR Code</button>
+      <button class="qr-btn" id="qr-btn" onclick="generateQRCode()">Create QR Code</button>
+      
     </div>
+    
     <br/>
     <p id="qr-result"></p>
     <canvas id="qr-code"></canvas>
@@ -49,6 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 		<script>	/* JS comes here */
 		var qr;
+    
     function generateQRCode() 
     {
       (function() 
@@ -73,6 +91,16 @@
       });
     }
 		</script>
+  <script>
+    var $qr = $('#qr-btn');
+    setTimeout(function (params) {
+      $qr.addClass('btn-disable');
+      
+    },2000)
+
+  </script>
+
+  
         
 	</body>
 </html>

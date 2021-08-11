@@ -24,7 +24,8 @@
        // $token=bin2hex(random_bytes(15));
 
         // email verification
-        $emailquery = "SELECT * FROM admin_register WHERE Email='$Email'";
+        
+        $emailquery = "SELECT * FROM `user_register` WHERE Email='$Email'";
         $query = mysqli_query($conn,$emailquery);
         $emailcount =  mysqli_num_rows($query);
         
@@ -35,7 +36,7 @@
             <script>
                 //pop up message code
                 alert("email already exist");
-                window.location.replace('register.html');
+                window.location.replace('user_register.html');
             </script>
             <?php
             # code...
@@ -45,7 +46,7 @@
             {
                 //insert query... adding details to database
 
-                $q = "INSERT INTO `admin_register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Email','$Phone','')";
+                $q = "INSERT INTO `user_register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Email','$Phone','')";
 
                 $query = mysqli_query($conn,$q);
                 if(mysqli_query($conn, $query))
@@ -55,7 +56,7 @@
                 ?>
                 <script>
                     alert("Registered  Successfully");
-                    window.location.replace('login.html');
+                    window.location.replace('user_login.html');
                 </script>
                 <?php
                 #code...
@@ -66,7 +67,7 @@
                 ?>
                 <script>
                     alert("password does not matched ");
-                    window.location.replace('register.html');
+                    window.location.replace('user_register.html');
                 </script>
                 <?php
                 #code...

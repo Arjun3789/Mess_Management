@@ -19,7 +19,7 @@
         $email=$_POST['Email'];
         $Pass=$_POST['Pass'];
         // query for fetching email and password
-        $sql = "SELECT * FROM register WHERE email='$email' and pass='$Pass' ";
+        $sql = "SELECT * FROM admin_register WHERE email='$email' and pass='$Pass' ";
         $result = mysqli_query($conn,$sql);
 
 
