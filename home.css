@@ -1,14 +1,21 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: sans-serif;  
+    font-family: sans-serif; 
+     
 
 }
 
 body{
-     background: url('./mess.png') no-repeat;
+    
+     background-image: linear-gradient(red,blue);
      background-size: cover;
    
+ }
+ .grad{
+     height: 750px;
+     background-color: red;
+     background-image: linear-gradient(red,blue);
  }
  .home-form{
     width: 350px;

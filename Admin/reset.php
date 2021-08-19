@@ -48,16 +48,16 @@ if(isset($_POST['reset-btn']))
           #code...
         }
       }
-      else
-      { // wrong password code
-        ?>
-        <script>
-          alert("password does not matched ");
-          window.location.replace('reset.php?token=$token & email=$email');
-        </script>
-        <?php
-        #code...
-      }
+      /* else
+       { // wrong password code
+         ?>
+         <script>
+           alert("password does not matched ");
+           window.location.replace('reset.php?token=$token & email=$email');
+         </script>
+         <?php
+         #code...
+       }*/
     }else
     {
        // validation
@@ -92,8 +92,9 @@ if(isset($_POST['reset-btn']))
 <html>
 	<head>
 		<title>Reset_password</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">      
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
 		<link rel="stylesheet" type="text/css" href="reset.css">
 	</head>
 	<body>
@@ -116,6 +117,24 @@ if(isset($_POST['reset-btn']))
                     </div>   
                
                 </div>
+                  <script type="text/javascript">
+                    var password = document.getElementById("pass1"), confirm_password = document.getElementById("pass2");
+
+                    function validatePassword()
+                    {
+                      if(password.value != confirm_password.value)
+                        {
+                          confirm_password.setCustomValidity("Passwords Don't Match");
+                        } 
+                        else 
+                        {
+                          confirm_password.setCustomValidity('');
+                        }
+                    }
+
+                    password.onchange = validatePassword;
+                    confirm_password.onkeyup = validatePassword;
+                  </script>
            
         </form>
     </body>
