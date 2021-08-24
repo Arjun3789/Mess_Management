@@ -64,7 +64,7 @@ if($total!=0)
         <td>".$result['LName']."</td>
 		<td>".$result['Email']."</td>
         <td>".$result['Phone']."</td>
-        <td><a href='update_Edit.php?id=$result[Id] & fn=$result[FName] & ln=$result[LName] & eml=$result[Email] & ph=$result[Phone] '><input type='submit' value='Edit/Update' id='editbtn'></td>
+        <td><a href='update_Edit.php?Id=$result[Id] & FName=$result[FName] & LName=$result[LName] & Email=$result[Email] & Phone=$result[Phone] '><input type='submit' value='Edit/Update' id='editbtn'></td>
         <td><a href='delete.php?id=$result[Id]' onclick='return checkdelete() '><input type='submit' value='Delete' id='dltbtn'></td>
 	
 	</tr>";
@@ -116,8 +116,8 @@ else
 </style>
 </head>
 <body>
-    <h2 align="center" style="width:40%; float:right">User_Records</h2>
-<h1><table   border="4" cellspacing="4" style="width:45%; float:right">
+    <h2 align="center" style="width:40%; float:right;margin:-50px;margin-right:50px">User_Records</h2>
+<h1><table   border="4" cellspacing="4" style="width:45%; float:right;margin-right:30px">
 <tr>
 	<th>Id</th>
 	<th>First_Name</th>

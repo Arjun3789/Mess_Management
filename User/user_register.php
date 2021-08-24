@@ -56,7 +56,7 @@
                 ?>
                 <script>
                     alert("Registered  Successfully");
-                    window.location.replace('user_login.html');
+                    window.location.replace('/Mess_management/Admin/main.html');
                 </script>
                 <?php
                 #code...

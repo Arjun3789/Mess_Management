@@ -12,11 +12,11 @@ else
 echo "no connected";
 #code....
  }
- $id=$_GET['id'];
- $fn=$_GET['fn'];
- $ln=$_GET['ln'];
- $eml=$_GET['eml'];
- $ph=$_GET['ph'];
+ $id=$_GET['Id'];
+ $fn=$_GET['FName'];
+ $ln=$_GET['LName'];
+ $eml=$_GET['Email'];
+ $ph=$_GET['Phone'];
 ?>
 <html>
 	<head>
