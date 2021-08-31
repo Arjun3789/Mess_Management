@@ -5,11 +5,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">      
 		<link rel="stylesheet" type="text/css" href="#">
 <style>
+    .menu-bar{
+    background: blue;
+    text-align: center;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif ;
+    box-sizing: border-box;
+}
+body{
+   
+    background-size: cover;
+} 
+.menu-bar{
+    background: blue;
+    text-align: center;
+
+}
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.menu-bar ul li{
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar ul li a{
+    color: white;
+    text-decoration: none;
+}
+.active, .menu-bar ul li:hover{
+    background:black;
+    border-radius: 3px;
+}
+.menu-bar .fas{
+    margin-right: 8px;
+}
+.sub-menu1{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu1{
+    display: block;
+    position: absolute;
+    background:blue;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu1 ul li{
+    width: 100px;
+    padding: 10px;
+    background: transparent;
+    border-bottom: 1px dotted white;
+    border-radius: 0;
+    text-align: left;
+}
+.menu-bar ul li:hover .sub-menu1 ul li a:hover{
+    color:black;
+}
 #editbtn
 {
     background-color:green;
     color:white;
-    width:90px;
+    width:80px;
     font-size:14px;
     height:25px;    
 }
@@ -17,15 +82,32 @@
 {
     background-color:red;
     color:white;
-    width:80px;
+    width:60px;
     font-size:14px;
     height:25px; 
 }
 </style>
 </head>
 <body>
-    <h2 align="center" style="width:40%;">Admin_Records</h2>
-<h1><table   border="4" cellspacing="4" style="width:45%; float:left;">
+<div class="menu-bar">
+        <ul>
+           <li ><a href="main.html"><i class="fa fa-home"></i> Home</a></li>
+               <li><a href="#"><i class="fa fa-registered"></i> Registation</a>
+                   <div class="sub-menu1">
+                       <ul>
+                           <li><a href="./register.html">Admin</a></li>
+                           <li><a href="/Mess_management/User/user_register.html">User</a></li>
+                       </ul>
+                   </div>
+               </li>
+                <li><a href="./QRcode.html"><i class="fa fa-qrcode"></i> QR Code</a></li>
+                <li><a href="./records.php" class="fa fa-users"></i> Account</a></li>
+                <li><a href="payment.php"><i class="fa fa-rupee"></i> Payment</a></li>
+                <li><a href="./login.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+       </ul>
+    </div>
+    <h2 align="center" style="width:40%;margin-top:20px">Admin_Records</h2>
+<h1><table   border="4" cellspacing="4" style="width:30%; float:left;  margin-top:20px">
 <tr>
 	<th>Id</th>
 	<th>First_Name</th>
@@ -109,21 +191,23 @@ else
 {
     background-color:red;
     color:white;
-    width:80px;
+    width:60px;
     font-size:14px;
     height:25px; 
 }
 </style>
 </head>
 <body>
-    <h2 align="center" style="width:40%; float:right;margin:-50px;margin-right:50px">User_Records</h2>
-<h1><table   border="4" cellspacing="4" style="width:45%; float:right;margin-right:30px">
+    <h2 align="center" style="width:40%; float:right;margin:-30px;margin-right:50px;">User_Records</h2>
+<h1><table   border="4" cellspacing="4" style="width:40%; float:right;margin-right:10px;margin-top:20px">
 <tr>
 	<th>Id</th>
 	<th>First_Name</th>
 	<th>Last_Name</th>
 	<th>Email</th>
 	<th>Contact</th>
+    <th>Gender</th>
+	<th>Package</th>
     <th colspan="2" align="center">Operations</th>
 </tr>
 </h1>
@@ -156,7 +240,10 @@ if($total!=0)
         <td>".$result['LName']."</td>
 		<td>".$result['Email']."</td>
         <td>".$result['Phone']."</td>
-        <td><a href='User_update_Edit.php?id=$result[Id] & fn=$result[FName] & ln=$result[LName] & eml=$result[Email] & ph=$result[Phone] '><input type='submit' value='Edit/Update' id='editbtn'></td>
+        <td>".$result['Gender']."</td>
+        <td>".$result['Package']."</td>
+
+        <td><a href='User_update_Edit.php?id=$result[Id] & fn=$result[FName] & ln=$result[LName] & eml=$result[Email] & ph=$result[Phone] & gn=$result[Gender] & pkg=$result[Package]'><input type='submit' value='Edit/Update' id='editbtn'></td>
         <td><a href='User_delete.php?id=$result[Id]' onclick='return checkdelete() '><input type='submit' value='Delete' id='dltbtn'></td>
 	
 	</tr>";

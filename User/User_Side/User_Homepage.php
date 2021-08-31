@@ -1,3 +1,28 @@
+<?php
+	session_start();
+	//echo "Hello  " . $_SESSION['userid'];
+	$conn=mysqli_connect('localhost','root');
+  mysqli_select_db($conn,'mess_management');
+  if ($conn) 
+  {
+     // echo "Connected";
+      # code...
+  }
+  else
+  {
+      echo "Not Connected";
+      # code...
+  }
+  $id=$_SESSION['userid'];
+  $sql = "SELECT * from user_register where Email='$id'";
+  $result = mysqli_query($conn,$sql);
+  
+  if($result->num_rows > 0)// checking for email exist or not
+      {
+          $row = mysqli_fetch_assoc($result);
+		  
+	  }
+?>
 <html>
 <head>
 	<title>User_HomePage</title>
@@ -8,11 +33,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<body>
+<body>	
 <div class="menu-bar">
 <ul>
-	<li><a href="./User_Homepage.html" style="font-size:15px;"><i class="fa fa-home"></i> Home</a></li>
+	<li><a href="./User_Homepage.php" style="font-size:15px;"><i class="fa fa-home"></i> Home</a></li>
 	<li><a href="#" style="font-size:15px;"><i class="fa fa-newspaper-o"></i> Menu</a>
 		<div class="sub-menu-1" style="position: absolute; z-index: 1;border-radius: 15%">
 			<ul>
@@ -26,14 +50,15 @@
 		</div>
 	</li>
 	<li><a href="./User_Services.html" style="font-size:15px;"><i class="fa fa-shopping-bag"></i> Services</a></li>
+
 	<li><a href="./package.html"><i class="fa fa-rupee" style="font-size:15px;"></i> Package</a></li>
 	<li><a href="./User_AboutUs.html" style="font-size:15px;"><i class="fa fa-user-circle"></i> About Us</a></li>
 	<li><a href="./User_ContactUs.html" style="font-size:15px;"><i class="fa fa-phone"></i> Contact Us</a></li>
 	<li><a href="" style="font-size:15px;">More <i class="fa fa-angle-double-down"></i></a>
 		<div class="sub-menu-1" style="position: absolute; z-index: 1;border-radius: 15%">
 			<ul>
-				<li><a href="./qr-code-scanner/index.html">Scan</a></li>
-				<li><a href="/mess_management/User/User_login.html">Log-Out</a></li>
+				<li><a href="./scanner.html">Scan</a></li>
+				<li><a href="/mess_management/User/User_login.php">Log-Out</a></li>
 				
 			</ul>
 		</div>
@@ -55,7 +80,7 @@
 	</figure>
 </div>
 <div style="background-color: black"><marquee style="color:white;" direction = "right", scrollamount="15"><i><b style="font-size:150%;text-shadow: 1px 1px blue;">WELCOME TO P & Z EATERY AND EATING HOUSE</b></i></marquee></div>
-
+<div style="background-color: black"><marquee style="color:white;" direction = "center", scrollamount="15"><i><b style="font-size:150%;text-shadow: 1px 1px blue;"><?php echo "Hello ".$row['FName'] .'  '. $row['LName'], '<br/>'."You are a Member of:   " . $row['Package'] ."  Package"; ?></b></i></marquee></div>
 <p class = "side">The <strong></strong><abbr title="P & Z  EATERY AND EATING HOUSE">PZEAE</abbr></strong> is runned by the Chef on Wheels. It is one of a kind catering service that offers high quality & cost effective service. Our prime focus is to provide healthy and delicious food for everyone, anytime, anywhere. We believe that food served with warmth and the right attitude will leave a lasting impression in the minds of people being served. Our priority is to maintain a standard operating procedure, uniformly practiced across various sites with high emphasis on following food safety protocols and compliance with all statutory norms.</p>
 
 <p class = "side">Our expertise in world cuisine and a dynamic delivery team comprising of specialized chefs and nutritionists, has been the cornerstone of our success in delivering high quality food services over the years. We also provide end to end catering solutions from equipment selection to kitchen set up and efficient operationalization. Most importantly any kind of harmful food additives are not used in food preparation.</p>

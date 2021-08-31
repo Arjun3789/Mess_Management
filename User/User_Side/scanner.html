@@ -1,0 +1,104 @@
+<html>
+    <head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="User_HomePage.css">
+	<link rel="stylesheet" type="text/css" href="User_HomePage2.css">
+<style>
+ .button{
+    border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 3px solid rgb(42, 42, 211);
+padding: 14px 10px;
+width: 100px;
+border-radius: 80px;
+cursor: pointer;
+color: white;
+background-color: black;
+ }
+
+</style>
+    </head>
+    <body>
+        <div class="menu-bar">
+            <ul>
+              <li><a href="User_Homepage.php" style="font-size:15px;"><i class="fa fa-home"></i> Home</a></li>
+              <li><a href="" style="font-size:15px;"><i class="fa fa-newspaper-o"></i> Menu</a>
+                <div class="sub-menu-1" style="position: absolute; z-index: 1;border-radius: 15%" >
+                  <ul>
+                    <li><a href="Menu_Monday.html">Monday</a></li>
+                    <li><a href="Menu_Tuesday.html">Tuesday</a></li>
+                    <li><a href="Menu_Wednesday.html">Wednesday</a></li>
+                    <li><a href="Menu_Thursday.html">Thursday</a></li>
+                    <li><a href="Menu_Friday.html">Frinday</a></li>
+                    <li><a href="Menu_Saturday.html">Saturday</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="User_Services.html" style="font-size:15px;"><i class="fa fa-shopping-bag"></i> Services</a></li>
+              <li><a href="./package.html"><i class="fa fa-rupee" style="font-size:15px;"></i> Package</a></li>
+              <li><a href="User_AboutUs.html" style="font-size:15px;"><i class="fa fa-user-circle"></i> About Us</a></li>
+              <li><a href="User_ContactUs.html" style="font-size:15px;"><i class="fa fa-phone"></i> Contact Us</a></li>
+              <li><a href="" style="font-size:15px;padding:5px">More <i class="fa fa-angle-double-down"></i></a>
+                <div class="sub-menu-1" style="position: absolute; z-index: 1;border-radius: 15%">
+                  <ul>
+                    <li><a href="./scanner.html">Scan</a></li>
+                    <li><a href="/mess_management/User/User_login.php">Log-Out</a></li>
+                    
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <video id="preview" width="100%"></video>
+                </div>
+                <div class="col-md-6">
+                <form class="box" method="POST" action="scansubmit.php">
+                    <input type="text" name="name" id="name" readonyy="" placeholder="scan qrcode" class="form-control" required>
+                    
+                    <input type="text" name="date" id="date" readonyy="" placeholder="scan qrcode" class="form-control">
+                   
+                  <!-- <textarea rows = "5" cols = "60" id="text" readonyy="" placeholder="scan qrcode" class="form-control" ></textarea> -->
+               
+                
+                        <button name="submit" class="button" >Submit</button>
+                   
+                    
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+           let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
+           Instascan.Camera.getCameras().then(function(cameras){
+               if(cameras.length > 0 ){
+                   scanner.start(cameras[0]);
+
+               } else{
+                   alert('No cameras found');
+               }
+
+           }).catch(function(e) {
+               console.error(e);
+           });
+
+           scanner.addListener('scan',function(c){
+               console.log(c);
+               let {name,date}=JSON.parse(c)
+               document.getElementById('name').value=name;
+               
+               document.getElementById('date').value=date;
+           });
+
+        </script>
+    </body>
+</html>

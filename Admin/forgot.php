@@ -129,35 +129,6 @@ if(isset($_POST['submit']))  // accessing through submit btn
   #code...
  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
  
 

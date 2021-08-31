@@ -17,6 +17,9 @@ echo "no connected";
  $ln=$_GET['ln'];
  $eml=$_GET['eml'];
  $ph=$_GET['ph'];
+ $gn=$_GET['gn'];
+ $pkg=$_GET['pkg'];
+
 ?>
 <html>
 	<head>
@@ -24,7 +27,7 @@ echo "no connected";
         <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">      
-		<link rel="stylesheet" type="text/css" href="register.css">
+		<link rel="stylesheet" type="text/css" href="Update_Edit.css">
 	</head>
 	<body>
         
@@ -42,6 +45,11 @@ echo "no connected";
                         
                         <p>Email Id
                         <input type="email" name="Email" value="<?php echo "$eml" ?>" class="input-box" placeholder="Email" required></p>
+                        
+                        <p>Gender
+                        <input type="text" name="Gender" value="<?php echo "$gn" ?>" class="input-box" placeholder="Gender" required></p>
+                        <p>Package
+                        <input type="text" name="Package" value="<?php echo "$pkg" ?>" class="input-box" placeholder="Package" required></p>
                         <p>Contact_Number
                         <input type="number" name="Phone" value="<?php echo "$ph" ?>" class="input-box" placeholder="Contact_Number" required></p>
                         <a href="">
@@ -55,15 +63,17 @@ echo "no connected";
     </body>
 </html>
 <?php 
- if($_GET['submit'])
+ if(isset($_GET['submit']))
  {
     $Id=$_GET['Id'];
     $FName=$_GET['FName'];
     $LName=$_GET['LName'];
     $Email=$_GET['Email'];
     $Phone=$_GET['Phone'];
+    $Gender=$_GET['Gender'];
+    $Package=$_GET['Package'];
 
-    $query="UPDATE user_register SET Id='$Id', FName='$FName',LName='$LName',Email='$Email',Phone='$Phone' WHERE Id='$Id'";
+    $query="UPDATE user_register SET Id='$Id', FName='$FName',LName='$LName',Email='$Email',Phone='$Phone',Gender='$Gender',Package='$Package' WHERE Id='$Id'";
     $data=mysqli_query($conn,$query);
 
     if($data)

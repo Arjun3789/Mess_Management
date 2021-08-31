@@ -14,7 +14,7 @@
 }
 .card{     
 	width: 350px;
-	height: 650px;
+	height: 750px;
 	box-shadow: 0 0 40px 20px rgba(0, 0, 0,0.26);
 	perspective: 1000px ;
 	border-radius: 5%;
@@ -34,8 +34,7 @@
 	font-weight: normal;
 	font-size: 24px;
 	text-align: center;
-	margin-bottom: 20px;
-	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .input-box{
 	width: 100%;
@@ -50,11 +49,25 @@
 	text-align: center;
 	color: #fff;
 }
+select{
+	width: 100%;
+	background: transparent;
+	background-color: black;
+	border: 1px solid #fff;
+	margin: 12px 0;
+	height: 30px;
+	border-radius: 20px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color:white;
+}
 button{
 	width: 100%;
 	background: transparent;
 	border: 1px solid #fff;
-	margin: 35px 0 10px;
+	margin: 25px 0 10px;
 	height: 32px;
 	font-size: 12px;
 	border-radius: 20px;

@@ -55,14 +55,14 @@ echo "no connected";
     </body>
 </html>
 <?php 
- if($_GET['submit'])
+ if(isset($_GET['submit']))
  {
     $Id=$_GET['Id'];
     $FName=$_GET['FName'];
     $LName=$_GET['LName'];
     $Email=$_GET['Email'];
     $Phone=$_GET['Phone'];
-
+    
     $query="UPDATE admin_register SET Id='$Id', FName='$FName',LName='$LName',Email='$Email',Phone='$Phone' WHERE Id='$Id'";
     $data=mysqli_query($conn,$query);
 

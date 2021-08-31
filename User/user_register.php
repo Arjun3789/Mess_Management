@@ -21,6 +21,8 @@
         $Confirm=$_POST['ConPass'];
         $Email=$_POST['Email'];
         $Phone=$_POST['Phone'];
+        $Gender=$_POST['Gender'];
+        $Package=$_POST['Package'];
        // $token=bin2hex(random_bytes(15));
 
         // email verification
@@ -46,7 +48,7 @@
             {
                 //insert query... adding details to database
 
-                $q = "INSERT INTO `user_register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Email','$Phone','')";
+                $q = "INSERT INTO `user_register` VALUES(`Id`,'$Fname','$Lname','$Pass','$Email','$Phone','$Gender','$Package','')";
 
                 $query = mysqli_query($conn,$q);
                 if(mysqli_query($conn, $query))
